@@ -1,0 +1,15 @@
+-- database: ./archive/olist.sqlite
+
+-- Query to check if indexes are used
+EXPLAIN QUERY PLAN
+SELECT *
+FROM customers
+WHERE customer_unique_id = 'uniq123';
+
+-- Another example: searching by state and zip efficiently
+EXPLAIN QUERY PLAN
+SELECT *
+FROM customers
+WHERE customer_state = 'MH'
+  AND customer_zip_code_prefix = 400001;
+
